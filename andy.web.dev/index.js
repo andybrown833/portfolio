@@ -59,11 +59,11 @@ app.route('/management/discord').get(function(req, res) { res.sendFile(cwd+"/app
 // /management/settings
 
 // REDIRECTS
-app.route('/twitch').get(function(req, res) { res.statusCode = 302; res.setHeader("Location", "https://www.twitch.tv/andybrown833"); res.end(); });
-app.route('/youtube').get(function(req, res) { res.redirect('https://www.youtube.com/channel/UCw3wIn5s568M47oDCnOCShg') });
-app.route('/discord').get(function(req, res) { res.redirect('https://discord.gg/BTFh8JBumC') });
-app.route('/instagram').get(function(req, res) { res.statusCode = 302; res.setHeader("Location", "https://www.instagram.com/AndyBrown833/"); res.end(); });
-app.route('/twitter').get(function(req, res) { res.redirect('https://twitter.com/AndyBrown833') });
+app.route('/twitch').get(function(req, res) { res.statusCode = 302; res.setHeader("Location", ""); res.end(); });
+app.route('/youtube').get(function(req, res) { res.redirect('') });
+app.route('/discord').get(function(req, res) { res.redirect('') });
+app.route('/instagram').get(function(req, res) { res.statusCode = 302; res.setHeader("Location", ""); res.end(); });
+app.route('/twitter').get(function(req, res) { res.redirect('') });
 
 // ERROR & CODES
 app.route('/403').get(function(req, res) { res.sendFile(cwd+"/app/403.html") });
@@ -76,7 +76,6 @@ var client = new Discord.Client();
 var discord_config = require('./scotty/config/config.js');
 var fs = require('fs');
 client.commands = new Discord.Collection();
-var scotty_key = 'NeCVSxeGI1@x0&VDzi!Z2SloS8oIX%AmVshM21Cc1&UL%PX*c50ap!C&^b&eyXBlvr#ZCWKfWO*rV@$ErUJwkMk5aQerT!z!g#j';
 
 const commandFiles = fs.readdirSync('./scotty/cmds/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles) {
