@@ -1,0 +1,14 @@
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background-color: transparent; }
+::-webkit-scrollbar-thumb { background: #888; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* CORE DESIGN ELEMENTS */
+.bg-andy-dark { background-color: #0a0d18; }
+.bg-andy-gray { background-color: #878787; }
+.text-andy-dark { color: #0a0d18; }
+.text-andy-gray { color: #878787; }
+.border-andy-dark { border-color: #0a0d18; }
+.border-andy-gray { border-color: #878787; }
+
+

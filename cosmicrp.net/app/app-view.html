@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+      <html lang="en">
+
+            <head>
+                  <meta charset="UTF-8">
+                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>CosmicRP</title>
+
+                  <!-- FAVICON & IMGS -->
+                  <link rel="shortcut icon" href="/assets/imgs/favicon.png" type="image/png">
+                  <link rel="stylesheet" href="/assets/css/reset.css">
+                  <link rel="stylesheet" href="/assets/css/tailwind.css">
+                  <link rel="stylesheet" href="/assets/css/main.css">
+
+            </head>
+
+
+
+            <body class="bg-gray-200">
+
+                  <!-- PAGE LOADER -->
+                  <div id="page.loader"></div>
+                  <canvas id="confetti" width="1" height="1"></canvas>
+
+                  <div id="page.content">
+                        
+                        <!-- ----------------------------------------- -->
+
+                        <div id="app.check" class="hidden">
+                              <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                                    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                                          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+                                    
+                                          <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                                    
+                                          <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+                                                <div>
+                                                      <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-blue-100">
+                                                            <svg class="animate-ping w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                            </svg>
+                                                      </div>
+                                                      <div class="mt-3 text-center sm:mt-5">
+                                                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                                                  Checking Records
+                                                            </h3>
+                                                            <div class="mt-2">
+                                                                  <p class="text-sm text-gray-500">
+                                                                        Stand by as we check our records.<br>Do NOT close this tab.
+                                                                  </p>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                          
+                        <!-- ----------------------------------------- -->
+
+                        <div id="app.view" class="hidden">
+                              <div>
+                                    <img draggable="false" class="h-32 w-full object-cover lg:h-48" src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80" alt="">
+                              </div>
+                              <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                                    <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
+                                          <div class="flex">
+                                                <div id="user.avatar"></div>
+                                          </div>
+                                          <div class="sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
+                                                <div class="sm:hidden md:block min-w-0 flex-1">
+                                                      <h1 class="text-2xl mt-2 font-bold text-gray-900 truncate">
+                                                            <div id="user.display_name"></div>
+                                                      </h1>
+                                                </div>
+                                                <div class="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
+                                                      <a href="/" class="inline-flex justify-center px-4 py-2 border border-gray-300 shadow-md text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                                            <svg class="-ml-1 mr-2 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                                            </svg>
+                                                            <span>Home</span>
+                                                      </a>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div class="hidden sm:block md:hidden mt-6 min-w-0 flex-1">
+                                          <h1 class="text-2xl font-bold text-gray-900 truncate">
+                                                <div id="user.display_name"></div>
+                                          </h1>
+                                    </div>
+                              </div>
+
+                              <div class="mt-8 mx-auto w-3/5 p-4 rounded-xl shadow-md bg-white">
+                                    <div class="flex justify-center">
+                                          <span class="text-md font-medium text-gray-900 text-center">CosmicRP Community Application Information</span>
+                                    </div>
+                                    <div class="relative">
+                                          <div class="absolute inset-0 h-1/2"></div>
+                                          <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                                <div class="max-w-4xl mx-auto">
+                                                      <dl class="sm:grid sm:grid-cols-3">
+                                                            <div class="flex flex-col border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
+                                                                  <dt class="order-2 mt-2 text-md leading-6 font-medium text-gray-500">
+                                                                        App ID
+                                                                  </dt>
+                                                                  <dd class="order-1 text-md font-extrabold text-blue-600">
+                                                                        <div id="app.id"></div>
+                                                                  </dd>
+                                                            </div>
+                                                            <div class="flex flex-col border-t border-b border-gray-100 p-6 text-center sm:border-0 sm:border-l sm:border-r">
+                                                                  <dt class="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
+                                                                        Status
+                                                                  </dt>
+                                                                  <dd class="order-1 text-md font-extrabold text-blue-600">
+                                                                        <div id="app.status"></div>
+                                                                  </dd>
+                                                            </div>
+                                                            <div class="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-l">
+                                                                  <dt class="order-2 mt-2 text-lg leading-6 font-medium text-gray-500">
+                                                                        Date Submitted
+                                                                  </dt>
+                                                                  <dd class="order-1 text-md font-extrabold text-blue-600">
+                                                                        <div id="app.submitted_date"></div>
+                                                                  </dd>
+                                                            </div>
+                                                      </dl>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <div id="app.notify" class="hidden mt-8 mx-auto w-3/5 p-4 rounded-xl shadow-md bg-white"></div>
+
+                              <div id="app.responces.section" class="mt-8 mx-auto w-3/5 p-4 rounded-xl shadow-md bg-white">
+                                    <div class="px-4 py-5 sm:px-6">
+                                          <h3 class="text-lg leading-6 font-medium text-gray-900">
+                                                Application Responces
+                                          </h3>
+                                          <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                                                Below are your responces 
+                                          </p>
+                                    </div>
+                                    <div class="border-t border-gray-200">
+                                          <dl id="app.responces"></dl>
+                                    </div>
+    
+                              </div>
+
+                        </div>
+                          
+                        <!-- ----------------------------------------- -->
+
+                        <br><br><br>
+                          
+                        <!-- ----------------------------------------- -->
+
+                  </div>
+
+
+
+                  <!-- SCRIPTS -->
+                  <script src="/socket.io/socket.io.js"></script>
+                  <script src="/assets/js/core/socket.connect.js"></script>
+                  <script src="/assets/js/core/jquery.slim.min.js"></script>
+                  <script src="/assets/js/core/popper.js"></script>
+                  <script src="/assets/js/core/sha3.min.js"></script>
+                  <script src="/assets/js/core/main.js"></script>
+
+                  
+                  <script src="/assets/js/auth/a.check.js"></script>
+                  <script src="/assets/js/apps/app-view.js"></script>
+
+                  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+            </body>
+
+      </html>

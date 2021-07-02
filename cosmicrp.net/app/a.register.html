@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+      <html lang="en">
+
+            <head>
+                  <meta charset="UTF-8">
+                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>CosmicRP Authentication</title>
+
+                  <!-- FAVICON & IMGS -->
+                  <link rel="shortcut icon" href="/assets/imgs/favicon.png" type="image/png">
+                  <link rel="stylesheet" href="/assets/css/reset.css">
+                  <link rel="stylesheet" href="/assets/css/tailwind.css">
+                  <link rel="stylesheet" href="/assets/css/main.css">
+
+            </head>
+
+
+
+            <body class="bg-gray-200">
+
+                  <!-- PAGE LOADER -->
+                  <!-- <div id="page.loader"></div> -->
+
+                  <div id="page.content">
+
+                        <!-- ----------------------------------------- -->
+
+                        <div class="min-h-screen bg-gray-200 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+                              <div class="sm:mx-auto sm:w-full sm:max-w-md">
+                                    <div class="bg-white py-8 px-4 shadow-md sm:rounded-lg sm:px-10">
+                                          <img draggable="false" class="mx-auto h-20" src="/assets/imgs/logo.png" alt="Workflow">
+                                          <h2 class="mt-6 text-center text-2xl font-extrabold text-gray-900">
+                                                CosmicRP Registration
+                                          </h2>
+                                          <p class="mt-4 text-center text-sm text-gray-600 max-w mb-6">
+                                                Register or
+                                                <a href="/login" class="font-medium text-blue-600 hover:text-blue-500">
+                                                      login today
+                                                </a>
+                                          </p>
+
+                                          <div id="e.generic" class="hidden text-sm text-white mb-4 rounded-xl shadow-md p-4 bg-red-700"></div>
+
+                                          <div class="space-y-6">
+                                                <div>
+                                                      <label for="display.name" class="block text-sm font-medium text-gray-700">
+                                                            Display Name
+                                                      </label>
+                                                      <div class="mt-1">
+                                                            <input id="display.name" name="display.name" type="text" class="appearance-none block w-full px-3 py-2 border-2 border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                                      </div>
+                                                      <div id="e.display.name" class="text-sm text-red-500"></div>
+                                                </div>
+                                                <div>
+                                                      <label for="email" class="block text-sm font-medium text-gray-700">
+                                                            Email Address
+                                                      </label>
+                                                      <div class="mt-1">
+                                                            <input id="email" name="email" type="email" class="appearance-none block w-full px-3 py-2 border-2 border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                                      </div>
+                                                      <div id="e.email" class="text-sm text-red-500"></div>
+                                                </div>
+                                    
+                                                <div>
+                                                      <label for="password" class="block text-sm font-medium text-gray-700">
+                                                            Password
+                                                      </label>
+                                                      <div class="mt-1">
+                                                            <input id="password" name="password" type="password" class="appearance-none block w-full px-3 py-2 border-2 border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                                      </div>
+                                                      <div id="e.password" class="text-sm text-red-500"></div>
+                                                </div>
+                                    
+                                                <div>
+                                                      <label for="password.confirm" class="block text-sm font-medium text-gray-700">
+                                                            Confirm Password
+                                                      </label>
+                                                      <div class="mt-1">
+                                                            <input id="password.confirm" name="password.confirm" type="password" class="appearance-none block w-full px-3 py-2 border-2 border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                                      </div>
+                                                      <div id="e.password.confirm" class="text-sm text-red-500"></div>
+                                                </div>
+                                    
+                                                <div>
+                                                      <button OnClick="Register()" type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-700 hover:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                            Register
+                                                      </button>
+                                                </div>
+                                          </div>
+                              
+                                    </div>
+                              </div>
+                        </div>
+    
+
+
+
+
+                        <!-- ----------------------------------------- -->
+
+
+                  </div>
+
+                  <!-- SCRIPTS -->
+                  <script src="/socket.io/socket.io.js"></script>
+                  <script src="/assets/js/core/socket.connect.js"></script>
+                  <script src="/assets/js/core/jquery.slim.min.js"></script>
+                  <script src="/assets/js/core/popper.js"></script>
+                  <script src="/assets/js/core/sha3.min.js"></script>
+                  <script src="/assets/js/core/main.js"></script>
+
+                  <script src="/assets/js/auth/a.register.js"></script>
+
+            </body>
+
+      </html>

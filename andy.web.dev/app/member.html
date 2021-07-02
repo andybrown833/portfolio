@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <!-- PAGE INFORMATION -->
+            <title>AndyBrown833</title>
+            <link rel="shortcut icon" href="/assets/imgs/favicon.ico" type="image/x-icon">
+
+            <!-- PAGE DESIGNS -->
+            <link rel="stylesheet" href="/assets/css/reset.css">
+            <link rel="stylesheet" href="/assets/css/fw.css">
+            <link rel="stylesheet" href="/assets/css/core.css">
+
+        </head>
+        <body draggable="false" class="bg-andy-dark">
+            <div id="page.loading"></div>
+
+            <div id="page.content" class="hidden">
+                <div id="member.header"></div>
+
+                <!--                                                               -->
+                <div id="page.content2">
+                    <div class="container mx-auto mt-20 w-4/5">
+                        <img class="img-responsive rounded-xl border-gray-900 border-2 shadow-md" src="/assets/imgs/thank-you-member.png" alt="">
+                    </div>
+                
+                    <div class="bg-andy-gray p-4 rounded-xl shadow-md mx-auto w-4/5 mt-10">
+                        <div class="font-bold text-andy-dark text-2xl">
+                            Welcome, <span id="get.member.name"></span>
+                        </div>
+                        <div class="font-bold text-andy-dark text-xl">
+                            I will be constructing more content for members in the near future. Thank you for your paitence in this endevour.<br>
+                            For now I hope you enjoy this button. Click to find out what happens.
+                        </div>
+                        <button OnClick="ExperimentFeature()" type="button" class="inline-flex items-center mt-4 px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-andy-dark hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <svg class="-ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                            Click Here
+                        </button>
+                    </div>
+
+                </div>
+
+                <!--                                                               -->
+                <div id="page.content3"></div>
+                <div id="page.content4"></div>
+                <!--                                                               -->
+
+
+                <!--                                                               -->
+
+
+
+
+                <div id="member.experiment.modal"></div>
+
+
+            </div>
+
+
+
+
+
+            <!-- SCRIPTS -->
+            <script src="/socket.io/socket.io.js"></script>
+            <script src="/assets/js/master/socket.connect.js"></script>
+            <script src="/assets/js/master/jquery.slim.min.js"></script>
+            <script src="/assets/js/master/popper.js"></script>
+            <script src="/assets/js/master/sha3.min.js"></script>
+            <script src="/assets/js/master/core.js"></script>
+            
+            <script src="/assets/js/auth.check.js"></script>
+            <script src="/assets/js/modules/member.header.js"></script>
+            <script src="/assets/js/member.js"></script>
+            <!-- <script src="/assets/js/modules/site.header.js"></script> -->
+        </body>
+
+    </html>

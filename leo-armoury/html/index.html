@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+      <html lang="en">
+            <head>
+                  <link rel="stylesheet" href="reset.css" type="text/css">
+                  <link rel="stylesheet" href="index.css" type="text/css">
+                  <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+            </head>
+            <body>
+
+                  <div class="container hidden" id="mainWindow">
+                        <div class="main-header">
+                              <img src="./logo.png" class="main-img" alt="">
+                        </div>
+
+                        <!-- INSTRUCTIONS -->
+                        <div class="content" id="instructionsDisplay">
+                              <span class="text-title text-white">Department Armoury</span>
+                              <br><br>
+                              <span class="text-description text-white">Select the weapons you would like to check out.</span>
+                        </div>
+
+                        <!-- WEAPON SELECTION -->
+                        <div class="content scrollable" id="weaponSelectionDisplay" style="margin-top:20px;">
+                              <span class="text-white">Tools</span>
+                              <hr style="margin-top:15px;">
+                              <div class="weapon-select" id="flashlight">Flashlight</div>
+                              <br><br>
+                              <span class="text-white">Melee Weapons</span>
+                              <hr style="margin-top:15px;">
+                              <div class="weapon-select" id="knife">Knife</div>
+                              <div class="weapon-select" id="nightstick">Nightstick</div>
+                              <br><br>
+                              <span class="text-white">Handguns</span>
+                              <hr style="margin-top:15px;">
+                              <div class="weapon-select" id="9mm">9mm Pistol</div>
+                              <div class="weapon-select" id="glock">Glock 17</div>
+                              <div class="weapon-select" id="tazer">Stun Gun</div>
+                              <br><br>
+                              <!-- <br><br>
+                              <span class="text-white">Long Guns</span>
+                              <hr style="margin-top:15px;">
+                              <div class="weapon-select">Pump Shotgun</div>
+                              <div class="weapon-select">Carbine Rifle</div>
+                              <br><br> -->
+                              <span class="text-white">Shotguns & Rifles</span>
+                              <br>
+                              <span class="text-description text-white">Shotguns and Rifles come standard in all patrol vehicles. You will be able to obtain them from your patrol car.</span>
+                        </div>
+
+                        <!-- CLOSE -->
+                        <div class="content" id="closeDisplay" style="margin-top:30px;">
+                              <div class="btn bg-orange text-white" id="closeBtn">Close</div>
+                        </div>
+
+
+                  </div>
+
+
+                  </div>
+
+                  <!-- SCRIPTS -->
+                  <script src="./index.js" type="text/javascript"></script>
+
+            </body>
+      </html>

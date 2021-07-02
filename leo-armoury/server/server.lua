@@ -1,0 +1,1 @@
+print('^1[FRAMEWORK]^6[ARMOURY] : ^0Started Successfully!')

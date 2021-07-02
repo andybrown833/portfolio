@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+      <html lang="en">
+
+            <head>
+                  <meta charset="UTF-8">
+                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>CosmicRP</title>
+
+                  <!-- FAVICON & IMGS -->
+                  <link rel="shortcut icon" href="/assets/imgs/favicon.png" type="image/png">
+                  <link rel="stylesheet" href="/assets/css/reset.css">
+                  <link rel="stylesheet" href="/assets/css/tailwind.css">
+                  <link rel="stylesheet" href="/assets/css/main.css">
+
+            </head>
+
+
+
+            <body class="bg-gray-200">
+
+                  <!-- PAGE LOADER -->
+                  <!-- <div id="page.loader"></div> -->
+
+                  <div id="page.content">
+                        
+                        <!-- ----------------------------------------- -->
+
+                        <div class="h-screen flex overflow-hidden bg-white">
+                              <div class="hidden lg:flex lg:flex-shrink-0">
+                                    <div class="flex flex-col w-64">
+                                          <div class="flex flex-col h-0 flex-1">
+                                                <div class="flex justify-center pt-4 h-16 flex-shrink-0 px-4 bg-gray-900">
+                                                      <img class="h-8 w-auto" src="/assets/imgs/logo2.png" alt="CosmicRP">
+                                                </div>
+                                                <div class="flex-1 flex flex-col overflow-y-auto">
+                                                      <nav class="flex-1 px-2 py-4 bg-gray-800">
+                                                            <div class="space-y-1">
+                                                                  <button id="ToggleAllApplications" OnClick="ToggleAllApplications()" class="w-full bg-gray-900 text-white hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md focus:border-opacity-0" aria-current="page">
+                                                                        <svg class="text-gray-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                                                                        </svg>
+                                                                        All Applications
+                                                                  </button>
+                                                
+                                                                  <button id="TogglePendingApplications" OnClick="TogglePendingApplications()" class="w-full text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md focus:border-opacity-0">
+                                                                        <svg class="text-gray-400 group-hover:text-gray-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                                                                        </svg>
+                                                                        Pending Applications
+                                                                  </button>
+                                                
+                                                                  <button id="ToggleDeniedApplications" OnClick="ToggleDeniedApplications()" class="w-full text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md focus:border-opacity-0">
+                                                                        <svg class="text-gray-400 group-hover:text-gray-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                                        </svg>
+                                                                        Denied Applications
+                                                                  </button>
+                                                
+                                                                  <button id="ToggleAcceptedApplications" OnClick="ToggleAcceptedApplications()" class="w-full text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md focus:border-opacity-0">
+                                                                        <svg class="text-gray-400 group-hover:text-gray-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                                                                        </svg>
+                                                                        Accepted Applications
+                                                                  </button>
+                                                
+                                                                  <button id="ToggleClosedApplications" OnClick="ToggleClosedApplications()" class="w-full text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md focus:border-opacity-0">
+                                                                        <svg class="text-gray-400 group-hover:text-gray-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                                        </svg>
+                                                                        Closed Applications
+                                                                  </button>
+                                                            </div>
+                                                      </nav>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+
+
+                              <div class="w-full">
+
+                                    <div id="apps.all" class="hidden">
+                                          <!-- HEADER -->
+                                          <div class="bg-gray-900 shadow-md mx-auto p-4 flex justify-center h-16">
+                                                <span class="text-white font-medium uppercase text-xl">All Applications</span>
+                                          </div>
+                                          <!-- CONTENT -->
+                                          <div class="p-8">
+                                                <div class="flex flex-col">
+                                                      <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                                                  <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-t-lg">
+                                                                        <table class="min-w-full divide-y divide-gray-200">
+                                                                              <thead class="bg-gray-800">
+                                                                                    <tr>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                App ID
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Applicant Name
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Applicant Email
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Department
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Status
+                                                                                          </th>
+                                                                                          <th scope="col" class="relative px-6 py-3"></th>
+                                                                                    </tr>
+                                                                              </thead>
+                                                                              <tbody id="app.table.all"></tbody>
+                                                                        </table>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div id="apps.pending" class="hidden">
+                                          <!-- HEADER -->
+                                          <div class="bg-yellow-600 shadow-md mx-auto p-4 flex justify-center h-16">
+                                                <span class="text-white font-medium uppercase text-xl">Pending Applications</span>
+                                          </div>
+                                          <!-- CONTENT -->
+                                          <div class="p-8">
+                                                <div class="flex flex-col">
+                                                      <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                                                  <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-t-lg">
+                                                                        <table class="min-w-full divide-y divide-gray-200">
+                                                                              <thead class="bg-yellow-600">
+                                                                                    <tr>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                App ID
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Applicant Name
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Applicant Email
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Department
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Status
+                                                                                          </th>
+                                                                                          <th scope="col" class="relative px-6 py-3"></th>
+                                                                                    </tr>
+                                                                              </thead>
+                                                                              <tbody id="app.table.pending"></tbody>
+                                                                        </table>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div id="apps.denied" class="hidden">
+                                          <!-- HEADER -->
+                                          <div class="bg-red-600 shadow-md mx-auto p-4 flex justify-center h-16">
+                                                <span class="text-white font-medium uppercase text-xl">Denied Applications</span>
+                                          </div>
+                                          <!-- CONTENT -->
+                                          <div class="p-8">
+                                                <div class="flex flex-col">
+                                                      <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                                                  <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-t-lg">
+                                                                        <table class="min-w-full divide-y divide-gray-200">
+                                                                              <thead class="bg-red-600">
+                                                                                    <tr>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                App ID
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Applicant Name
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Applicant Email
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Department
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Status
+                                                                                          </th>
+                                                                                          <th scope="col" class="relative px-6 py-3"></th>
+                                                                                    </tr>
+                                                                              </thead>
+                                                                              <tbody id="app.table.denied"></tbody>
+                                                                        </table>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div id="apps.acepted" class="hidden">
+                                          <!-- HEADER -->
+                                          <div class="bg-green-600 shadow-md mx-auto p-4 flex justify-center h-16">
+                                                <span class="text-white font-medium uppercase text-xl">Accepted Applications</span>
+                                          </div>
+                                          <!-- CONTENT -->
+                                          <div class="p-8">
+                                                <div class="flex flex-col">
+                                                      <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                                                  <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-t-lg">
+                                                                        <table class="min-w-full divide-y divide-gray-200">
+                                                                              <thead class="bg-green-600">
+                                                                                    <tr>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                App ID
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Applicant Name
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Applicant Email
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Department
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Status
+                                                                                          </th>
+                                                                                          <th scope="col" class="relative px-6 py-3"></th>
+                                                                                    </tr>
+                                                                              </thead>
+                                                                              <tbody id="app.table.accepted"></tbody>
+                                                                        </table>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div id="apps.closed" class="hidden">
+                                          <!-- HEADER -->
+                                          <div class="bg-gray-600 shadow-md mx-auto p-4 flex justify-center h-16">
+                                                <span class="text-white font-medium uppercase text-xl">Closed Applications</span>
+                                          </div>
+                                          <!-- CONTENT -->
+                                          <div class="p-8">
+                                                <div class="flex flex-col">
+                                                      <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                                                  <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-t-lg">
+                                                                        <table class="min-w-full divide-y divide-gray-200">
+                                                                              <thead class="bg-gray-600">
+                                                                                    <tr>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                App ID
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Applicant Name
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Applicant Email
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Department
+                                                                                          </th>
+                                                                                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                                                                                Status
+                                                                                          </th>
+                                                                                          <th scope="col" class="relative px-6 py-3"></th>
+                                                                                    </tr>
+                                                                              </thead>
+                                                                              <tbody id="app.table.closed"></tbody>
+                                                                        </table>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+
+                              </div>
+
+                        </div>
+    
+                          
+                        <!-- ----------------------------------------- -->
+
+                  </div>
+
+
+
+                  <!-- SCRIPTS -->
+                  <script src="/socket.io/socket.io.js"></script>
+                  <script src="/assets/js/core/socket.connect.js"></script>
+                  <script src="/assets/js/core/jquery.slim.min.js"></script>
+                  <script src="/assets/js/core/popper.js"></script>
+                  <script src="/assets/js/core/sha3.min.js"></script>
+                  <script src="/assets/js/core/main.js"></script>
+
+                  <script src="/assets/js/apps/app-manage2.js"></script>
+                  <script src="/assets/js/apps/app-manage.js"></script>
+
+            </body>
+
+      </html>

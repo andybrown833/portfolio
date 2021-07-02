@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+      <html lang="en">
+
+            <head>
+                  <meta charset="UTF-8">
+                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>CosmicRP</title>
+
+                  <!-- FAVICON & IMGS -->
+                  <link rel="shortcut icon" href="/assets/imgs/favicon.png" type="image/png">
+                  <link rel="stylesheet" href="/assets/css/reset.css">
+                  <link rel="stylesheet" href="/assets/css/tailwind.css">
+                  <link rel="stylesheet" href="/assets/css/main.css">
+
+            </head>
+
+
+
+            <body class="bg-gray-200">
+
+                  <!-- PAGE LOADER -->
+                  <!-- <div id="page.loader"></div>  -->
+
+                  <div id="page.content">
+                        
+                        <!-- ----------------------------------------- -->
+
+                        <div class="flex">
+                              <!-- SIDEBAR -->
+                              <div class="bg-gray-800 fixed h-full w-64">
+                                    <div class="bg-gray-900 h-16 flex justify-center">
+                                          <img class="mt-4 h-8 w-auto" src="/assets/imgs/logo2.png" alt="CosmicRP">
+                                    </div>
+                                    <div class="flex-1 flex flex-col overflow-y-auto">
+                                          <nav class="flex-1 px-2 py-4 bg-gray-800">
+                                                <div class="space-y-1">
+                                                      <a href="/app/manage" class="w-full bg-gray-800 text-white hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md focus:border-opacity-0" aria-current="page">
+                                                            <svg class="text-gray-300 mr-3 h-6 w-6" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                                            </svg>
+                                                            Return
+                                                      </a>
+                                                </div>
+                                          </nav>
+                                          
+                                          <div id="app.options" class="mt-6 px-4 bottom-2 fixed">
+                                                <button OnClick="C_AcceptApplication()" type="button" class="mb-2 text-center w-full py-6 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                                                      ACCEPT
+                                                </button>
+                                                <button OnClick="C_PendingApplication()" type="button" class="mb-2 text-center w-full py-6 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                                                      SET AS PENDING
+                                                </button>
+                                                <button OnClick="C_DenyApplication()" type="button" class="text-center w-full py-6 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                                      DENY
+                                                </button>
+                                          </div>
+                                    </div>
+                              </div>
+
+                              <!-- MAIN PAGE CONTENT -->
+                              <div class="w-full ml-64">
+                                    <div id="app.main">
+                                          <div>
+                                                <!-- HEADER  -->
+                                                <div class="sticky bg-gray-600 shadow-md mx-auto p-4 flex justify-center h-16">
+                                                      <span id="current.app.id" class="text-white font-medium uppercase text-xl">Application ID</span>
+                                                </div>
+                                                <!-- CONTENT  -->
+
+                                                <div class="p-4 mt-8 text-center">
+                                                      <div class="grid grid-cols-12 space-x-2">
+                                                            <div class="col-span-4"></div>
+                                                            <div class="col-span-4 bg-gray-800 p-2 rounded-t-xl shadow-md text-white font-bold uppercase">
+                                                                  Application Submitted By
+                                                            </div>
+                                                            <div class="col-span-4"></div>
+                                                            <div class="col-span-4"></div>
+                                                            <div class="col-span-4 bg-gray-600 p-4 rounded-b-xl shadow-md">
+                                                                  <span class="text-white uppercase font-medium">Display Name:  </span><span id="app.user.name" class="text-white"></span>
+                                                                  <br>
+                                                                  <span class="text-white uppercase font-medium">Email:  </span><span id="app.user.email" class="text-white"></span>
+                                                            </div>
+                                                            <div class="col-span-4"></div>
+                                                      </div>
+                                                </div>
+
+                                                <div class="p-4 mt-1 text-center">
+                                                      <div class="grid grid-cols-12 space-x-2">
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-6 bg-gray-800 p-2 rounded-t-xl shadow-md text-white font-bold uppercase">
+                                                                  Application Submitted On
+                                                            </div>
+                                                            <div class="col-span-4 bg-gray-800 p-2 rounded-t-xl shadow-md text-white font-bold uppercase">
+                                                                  Current Application Status
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                            
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-6 bg-gray-600 p-2 rounded-b-xl shadow-md text-white font-medium">
+                                                                  <span id="app.submitted_date" class="text-white"></span>
+                                                            </div>
+                                                            <div class="col-span-4 bg-gray-600 p-2 rounded-b-xl shadow-md text-white font-medium">
+                                                                  <span id="app.status" class="text-white"></span>
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                      </div>
+                                                </div>
+
+                                                <div id="app.pending.reasons"></div>
+                                                <div id="app.denial.reasons"></div>
+
+                                                <div class="p-4 mt-1 text-center">
+                                                      <div class="grid grid-cols-12 space-x-2">
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-800 p-2 rounded-t-xl shadow-md text-white font-bold uppercase">
+                                                                  Have you been a member of another FiveM roleplay community?
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                            
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-600 p-2 rounded-b-xl shadow-md text-white font-medium">
+                                                                  <span id="app.app01" class="text-white"></span>
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                      </div>
+                                                </div>
+
+                                                <div class="p-4 mt-1 text-center">
+                                                      <div class="grid grid-cols-12 space-x-2">
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-800 p-2 rounded-t-xl shadow-md text-white font-bold uppercase">
+                                                                  Are you currently in a FiveM roleplay community?
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                            
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-600 p-2 rounded-b-xl shadow-md text-white font-medium">
+                                                                  <span id="app.app02" class="text-white"></span>
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                      </div>
+                                                </div>
+
+                                                <div class="p-4 mt-1 text-center">
+                                                      <div class="grid grid-cols-12 space-x-2">
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-800 p-2 rounded-t-xl shadow-md text-white font-bold uppercase">
+                                                                  Why should you be accepted into the CosmicRP Community over another applicant?
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                            
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-600 p-2 rounded-b-xl shadow-md text-white font-medium">
+                                                                  <span id="app.app03" class="text-white"></span>
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                      </div>
+                                                </div>
+
+                                                <div class="p-4 mt-1 text-center">
+                                                      <div class="grid grid-cols-12 space-x-2">
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-800 p-2 rounded-t-xl shadow-md text-white font-bold uppercase">
+                                                                  Do you have any experience with roleplay?
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                            
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-600 p-2 rounded-b-xl shadow-md text-white font-medium">
+                                                                  <span id="app.app04" class="text-white"></span>
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                      </div>
+                                                </div>
+
+                                                <div class="p-4 mt-1 text-center">
+                                                      <div class="grid grid-cols-12 space-x-2">
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-800 p-2 rounded-t-xl shadow-md text-white font-bold uppercase">
+                                                                  Which department are you applying for?
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                            
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-600 p-2 rounded-b-xl shadow-md text-white font-medium">
+                                                                  <span id="app.department" class="text-white"></span>
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                      </div>
+                                                </div>
+
+                                                <div class="p-4 mt-1 text-center">
+                                                      <div class="grid grid-cols-12 space-x-2">
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-800 p-2 rounded-t-xl shadow-md text-white font-bold uppercase">
+                                                                  Why would you like to join this department?
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                            
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-600 p-2 rounded-b-xl shadow-md text-white font-medium">
+                                                                  <span id="app.app05" class="text-white"></span>
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                      </div>
+                                                </div>
+
+                                                <div class="p-4 mt-1 text-center">
+                                                      <div class="grid grid-cols-12 space-x-2">
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-800 p-2 rounded-t-xl shadow-md text-white font-bold uppercase">
+                                                                  Do you have any experience in this departments field of work?
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                            
+                                                            <div class="col-span-1"></div>
+                                                            <div class="col-span-10 bg-gray-600 p-2 rounded-b-xl shadow-md text-white font-medium">
+                                                                  <span id="app.app06" class="text-white"></span>
+                                                            </div>
+                                                            <div class="col-span-1"></div>
+                                                      </div>
+                                                </div>
+                                                
+                                          </div>
+
+                                    </div>
+
+                              </div>
+
+
+                        </div>
+
+                        <!-- ----------------------------------------- -->
+
+                        <div id="accept.app.confirm" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                              <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+                              
+                                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                              
+                                    <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                                          <div>
+                                                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                                                      <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                      </svg>
+                                                </div>
+                                                <div class="mt-3 text-center sm:mt-5">
+                                                      <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                                            Accept Application
+                                                      </h3>
+                                                      <div class="mt-2">
+                                                            <p class="text-sm text-gray-500">
+                                                                  Please confirm that you would like to accept this application.
+                                                            </p>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+                                                <button OnClick="F_AcceptApplication()" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:col-start-2 sm:text-sm">
+                                                      Accept
+                                                </button>
+                                                <button OnClick="CloseConfirmation()" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm">
+                                                      Cancel
+                                                </button>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div id="pending.app.confirm" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                              <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+                              
+                                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                              
+                                    <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                                          <div>
+                                                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                                                      <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                      </svg>
+                                                </div>
+                                                <div class="mt-3 text-center sm:mt-5">
+                                                      <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                                            Hold Application in Pending
+                                                      </h3>
+                                                      <div class="mt-2">
+                                                            <p class="text-sm text-gray-500">
+                                                                  Please confirm that you would like to place this application on hold and in pending for further review.
+                                                            </p>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+                                                <button OnClick="F_PendingApplication('A')" type="button" class="mt-2 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-yellow-600 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 sm:col-start-1 sm:text-sm">
+                                                      Needs Administration
+                                                </button>
+                                                <button OnClick="F_PendingApplication('R')" type="button" class="mt-2 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-yellow-600 text-base font-medium text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 sm:col-start-2 sm:text-sm">
+                                                      Needs Resources Command
+                                                </button>
+                                          </div>
+                                          <div class="mt-1">
+                                                <h4 class="text-md leading-6 font-medium text-gray-900" id="modal-title">
+                                                      Reason?
+                                                </h4>
+                                                <p id="pending.err" class="hidden text-sm text-red-500">
+                                                      You need to include a reason.
+                                                </p>
+                                                <textarea draggable="false" name="pending.reasons" id="pending.reasons" rows="4" class="bg-gray-500 text-white rounded-md shadow-md px-4 py-2 sm:w-full w-auto focus:bg-gray-600"></textarea>
+                                          </div>
+                                          <div class="mt-2 sm:mt-3">
+                                                <button OnClick="CloseConfirmation()" type="button" class="w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:col-start-1 sm:text-sm">
+                                                      Cancel
+                                                </button>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div id="deny.app.confirm" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                              <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+                              
+                                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                              
+                                    <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                                          <div>
+                                                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                                                      <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                                      </svg>
+                                                </div>
+                                                <div class="mt-3 text-center sm:mt-5">
+                                                      <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                                            Deny Application
+                                                      </h3>
+                                                      <div class="mt-2">
+                                                            <p class="text-sm text-gray-500">
+                                                                  Please confirm that you would like to deny this application.
+                                                            </p>
+                                                      </div>
+                                                      <div class="mt-1">
+                                                            <h4 class="text-md leading-6 font-medium text-gray-900" id="modal-title">
+                                                                  Reason?
+                                                            </h4>
+                                                            <p id="denial.err" class="hidden text-sm text-red-500">
+                                                                  You need to include a reason.
+                                                            </p>
+                                                            <textarea draggable="false" name="denial.reasons" id="denial.reasons" rows="4" class="bg-gray-500 text-white rounded-md shadow-md px-4 py-2 sm:w-full w-auto focus:bg-gray-600"></textarea>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
+                                                <button OnClick="F_DenyApplication()" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:col-start-2 sm:text-sm">
+                                                      Deny
+                                                </button>
+                                                <button OnClick="CloseConfirmation()" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:col-start-1 sm:text-sm">
+                                                      Cancel
+                                                </button>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div id="error.occrued" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                              <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                                    <div class="fixed inset-0 bg-gray-500 bg-opacity-100 transition-opacity" aria-hidden="true"></div>
+                              
+                                    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                              
+                                    <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                                          <div>
+                                                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-yellow-100">
+                                                      <svg class="h-6 w-6 text-yellow-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                      </svg>
+                                                </div>
+                                                <div class="mt-3 text-center sm:mt-5">
+                                                      <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                                            System Error
+                                                      </h3>
+                                                      <div class="mt-2">
+                                                            <p class="text-sm text-gray-500">
+                                                                  There has been an error with the application management system. Please reload and try again.
+                                                            </p>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class="mt-5 sm:mt-6 ">
+                                                <button OnClick="CloseConfirmation()" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:text-sm">
+                                                      Close
+                                                </button>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <!-- ----------------------------------------- -->
+
+                  </div>
+
+                  <br><br><br><br><br>
+
+                  <!-- SCRIPTS -->
+                  <script src="/socket.io/socket.io.js"></script>
+                  <script src="/assets/js/core/socket.connect.js"></script>
+                  <script src="/assets/js/core/jquery.slim.min.js"></script>
+                  <script src="/assets/js/core/popper.js"></script>
+                  <script src="/assets/js/core/sha3.min.js"></script>
+                  <script src="/assets/js/core/main.js"></script>
+
+                  <script src="/assets/js/apps/app-manage3.js"></script>
+
+            </body>
+
+      </html>

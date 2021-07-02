@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+      <html lang="en">
+
+            <head>
+                  <meta charset="UTF-8">
+                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>CosmicRP</title>
+
+                  <!-- FAVICON & IMGS -->
+                  <link rel="shortcut icon" href="/assets/imgs/favicon.png" type="image/png">
+                  <link rel="stylesheet" href="/assets/css/reset.css">
+                  <link rel="stylesheet" href="/assets/css/tailwind.css">
+                  <link rel="stylesheet" href="/assets/css/main.css">
+
+            </head>
+
+
+
+            <body class="bg-gray-200">
+
+                  <!-- PAGE LOADER -->
+                  <div id="page.loader"></div>
+
+                  <div id="page.content" class="hidden">
+
+                        <!-- ----------------------------------------- -->
+
+                        <div>
+                              <div>
+                                    <img draggable="false" class="h-32 w-full object-cover lg:h-60" src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80" alt="">
+                              </div>
+                              <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                                    <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
+                                          <div class="flex">
+                                                <div id="user.avatar"></div>
+                                          </div>
+                                          <div class="sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
+                                                <div class="sm:hidden md:block mt-6 min-w-0 flex-1">
+                                                      <h1 class="text-2xl mt-2 font-bold text-gray-900 truncate">
+                                                            <div id="user.display_name"></div>
+                                                      </h1>
+                                                      <h1 class="text-md -mt-1 font-medium text-red-500 truncate">
+                                                            Core Administrator
+                                                      </h1>
+                                                </div>
+                                                <div id="user.toolbar" class="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4"></div>
+                                          </div>
+                                    </div>
+                                    <div class="hidden sm:block md:hidden mt-6 min-w-0 flex-1">
+                                          <h1 class="text-2xl font-bold text-gray-900 truncate">
+                                                <span id="user.display_name"></span>
+                                          </h1>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <div class="mt-8 mx-auto w-3/5 p-4 rounded-xl shadow-md bg-white">
+                              <div class="flex justify-center">
+                                    <svg class="mx-auto h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                    </svg>
+                              </div>
+                              <div class="flex justify-center">
+                                    <span class="text-md font-medium text-gray-900 text-center">Welcome to your settings page.<br>Here you will be able to manage your account settings, reset your password and manage your integrations.</span>
+                              </div>
+                        </div>
+    
+                        <!-- ----------------------------------------- -->
+
+                        <div class="mt-4 mx-auto w-3/5 md:grid md:grid-cols-12 grid-flow-col gap-4">
+                              <div class="col-span-7">
+
+                                    <!-- DISPLAY NAME CHANGE -->
+                                    <div class="bg-white p-6 rounded-xl shadow-md">
+                                          <div class="text-md font-bold text-gray-900">Account Information</div>
+                                          <div class="text-sm font-medium text-gray-500">Update your display name and change your email below.</div>
+
+                                          <div class="mt-2">
+                                                <label for="email" class="block text-sm font-medium text-gray-700">
+                                                      Display Name
+                                                </label>
+                                                <div class="mt-1">
+                                                      <div id="change.display.name"></div>
+                                                      <div id="e.display.name" class="text-sm text-red-500"></div>
+                                                      <button OnClick="UpdateDisplayName()" type="button" class="inline-flex items-center px-3 mt-2 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                                            Update
+                                                      </button>
+                                                </div>
+                                          </div>
+
+                                          <div class="mt-2">
+                                                <label for="email" class="block text-sm font-medium text-gray-700">
+                                                      Avatar
+                                                </label>
+                                                <div class="mt-1">
+                                                      <div id="change.avatar"></div>
+                                                      <div id="e.avatar" class="text-sm text-red-500"></div>
+                                                      <button OnClick="UpdateAvatar()" type="button" class="inline-flex items-center px-3 mt-2 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                                            Update
+                                                      </button>
+                                                </div>
+                                          </div>
+                                          
+                                    </div>
+
+                                    <!-- CHANGE DISPLAY_NAME,  -->
+
+                                    <!-- CHANGE EMAIL -->
+                                    <!-- CHANGE PASSWORD -->
+
+                              </div>
+                              <div class="col-span-5">
+
+                                    <div class="mx-auto w-full p-4 rounded-xl shadow-md bg-white">
+                                          <div class="flex justify-center">
+                                                <svg class="mx-auto h-6 w-6 text-yellow-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                </svg>
+                                          </div>
+                                          <div class="flex justify-center">
+                                                <span class="text-md font-medium text-gray-900 text-center">PAGE UNDER CONSTRUCTION</span>
+                                          </div>
+                                    </div>
+
+                              </div>
+                        </div>
+
+                        <!-- ----------------------------------------- -->
+
+                  </div>
+    
+                  <!-- ----------------------------------------- -->
+
+
+
+
+                  <!-- SCRIPTS -->
+                  <script src="/socket.io/socket.io.js"></script>
+                  <script src="/assets/js/core/socket.connect.js"></script>
+                  <script src="/assets/js/core/jquery.slim.min.js"></script>
+                  <script src="/assets/js/core/popper.js"></script>
+                  <script src="/assets/js/core/sha3.min.js"></script>
+                  <script src="/assets/js/core/main.js"></script>
+
+                  <script src="/assets/js/account/account.settings.js"></script>
+
+            </body>
+
+      </html>

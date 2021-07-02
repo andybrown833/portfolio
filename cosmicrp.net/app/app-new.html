@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+      <html lang="en">
+
+            <head>
+                  <meta charset="UTF-8">
+                  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>CosmicRP</title>
+
+                  <!-- FAVICON & IMGS -->
+                  <link rel="shortcut icon" href="/assets/imgs/favicon.png" type="image/png">
+                  <link rel="stylesheet" href="/assets/css/reset.css">
+                  <link rel="stylesheet" href="/assets/css/tailwind.css">
+                  <link rel="stylesheet" href="/assets/css/main.css">
+
+            </head>
+
+
+
+            <body class="bg-gray-200">
+
+                  <!-- PAGE LOADER -->
+                  <div id="page.loader"></div>
+
+                  <div id="page.content" class="bg-gray-800">
+                        
+                        <!-- ----------------------------------------- -->
+
+                        <div id="app.check" class="hidden">
+                              <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                                    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                                          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+                                    
+                                          <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                                    
+                                          <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+                                                <div>
+                                                      <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-blue-100">
+                                                            <svg class="animate-ping w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                            </svg>
+                                                      </div>
+                                                      <div class="mt-3 text-center sm:mt-5">
+                                                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                                                  Checking Records
+                                                            </h3>
+                                                            <div class="mt-2">
+                                                                  <p class="text-sm text-gray-500">
+                                                                        Stand by as we check our records.<br>Do NOT close this tab.
+                                                                  </p>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <!-- ----------------------------------------- -->
+
+                        <div id="app.main" class="hidden">
+                
+                              <div class="bg-gray-800 pb-32 pt-8">
+                                    <div class="py-20 mb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+                                          <img draggable="false" src="/assets/imgs/logo2.png" alt="" class="opacity-70 lg:w-1/5 md:w-2/5 sm:w-3/5 w-4/5 px-10 -mt-20">
+                                    </div>
+
+                                    <div class="select-none -mt-20 flex justify-center text-2xl text-white font-bold">
+                                          CosmicRP Community Application
+                                    </div>
+                                    <div class="select-none mt-4 flex justify-center text-lg text-gray-500 font-bold text-center">
+                                          We would like to thank you for your interest in CosmicRP. <br>
+                                          There are a few sections in the application below, all requiring the most up-to-date information and detail.
+                                    </div>
+                              </div>
+                              
+                              <div class="-mt-20">
+                                    <div class="sm:max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
+                                          <div class="bg-gray-700 rounded-lg shadow min-h-screen sm:p-20 p-8 flex justify-center">
+                                          <!-- APPLICATION FORM FIELDS -->
+                                                <div>
+                                                      <div id="app.form.core">
+                                                            
+                                                            <div class="grid grid-cols-12 gap-6">
+                                                                  <div class="col-span-2"></div>
+                                                                  <div class="col-span-8 mb-6">
+                                                                        <p class="select-none text-white text-xl font-bold">Your Information</p>
+                                                                        <p class="select-none mt-2 text-sm text-gray-300">Please fill out the fields below with the most accureate and up-to-date information.</p>
+                                                                  </div>
+                                                                  <div class="col-span-2"></div>
+                                                            </div>
+
+                                                            <div class="grid grid-cols-12 gap-6">
+                                                                  <div class="col-span-2"></div>
+
+                                                                  <div class="col-span-6">
+                                                                        <label for="FirstName" class="select-none pl-1 block text-md font-medium text-gray-300 upp">First Name</label>
+                                                                        <div class="mt-1">
+                                                                              <input draggable="false" type="text" name="FirstName" id="FirstName" class="bg-gray-500 text-white rounded-md shadow-md px-4 py-2 sm:w-full w-auto focus:bg-gray-600" placeholder="Anderson">
+                                                                        </div>
+                                                                        <span class="select-none text-red-600 text-sm">* Required </span>
+                                                                  </div>
+
+                                                                  <div class="col-span-2">
+                                                                        <label for="LastName" class="select-none pl-1 block text-md font-medium text-gray-300 upp">Last Initial</label>
+                                                                        <div class="mt-1">
+                                                                              <input draggable="false" type="text" name="LastName" id="LastName" class="bg-gray-500 text-white rounded-md shadow-md px-4 py-2 sm:w-full w-auto focus:bg-gray-600" placeholder="B.">
+                                                                        </div>
+                                                                        <span class="select-none text-red-600 text-sm">* Required </span>
+                                                                  </div>
+
+                                                                  <div class="col-span-2"></div>
+                                                            </div>
+                                                            
+                                                            <div class="p-4"></div>
+                                                            
+                                                            <div class="grid grid-cols-12 gap-6">
+                                                                  <div class="col-span-2"></div>
+                                                                  <div class="col-span-8 mb-6">
+                                                                        <p class="select-none text-white text-xl font-bold">Application Responces</p>
+                                                                        <p class="select-none mt-2 text-sm text-gray-300"><span class="text-red-600 text-sm">* Required </span>Fill out the below fields with detail. Applications lacking detail and/or effort will be denied.</p>
+                                                                  </div>
+                                                                  <div class="col-span-2"></div>
+                                                            </div>
+
+                                                            <div class="grid grid-cols-12 gap-6">
+                                                                  <div class="col-span-2"></div>
+
+                                                                        <div class="col-span-8">
+                                                                              <label for="app01" class="select-none pl-1 block text-md font-medium text-gray-300 upp">Have you been a member of another FiveM roleplay community?</label>
+                                                                              <div class="mt-1">
+                                                                                    <textarea draggable="false" name="app01" id="app01" rows="2" class="bg-gray-500 text-white rounded-md shadow-md px-4 py-2 sm:w-full w-auto focus:bg-gray-600"></textarea>
+                                                                              </div>
+                                                                              <p class="select-none pl-2 mt-2 text-sm text-gray-400"><span class="text-red-600 text-sm">* Required </span>If your answer is yes, please list which communities or community your position(s) within.<p>
+                                                                        </div>
+
+                                                                  <div class="col-span-2"></div>
+                                                            </div>
+                                                            
+                                                            <div class="p-4"></div>
+
+                                                            <div class="grid grid-cols-12 gap-6">
+                                                                  <div class="col-span-2"></div>
+
+                                                                        <div class="col-span-8">
+                                                                              <label for="app02" class="select-none pl-1 block text-md font-medium text-gray-300 upp">Are you currently in a FiveM roleplay community?</label>
+                                                                              <div class="mt-1">
+                                                                                    <textarea draggable="false" name="app02" id="app02" rows="2" class="bg-gray-500 text-white rounded-md shadow-md px-4 py-2 sm:w-full w-auto focus:bg-gray-600"></textarea>
+                                                                              </div>
+                                                                              <p class="select-none pl-2 mt-2 text-sm text-gray-400"><span class="text-red-600 text-sm">* Required </span>If your answer is yes, please list which communities or community your position(s) within.<p>
+                                                                        </div>
+
+                                                                  <div class="col-span-2"></div>
+                                                            </div>
+                                                            
+                                                            <div class="p-4"></div>
+                                                            
+                                                            <div class="grid grid-cols-12 gap-6">
+                                                                  <div class="col-span-2"></div>
+
+                                                                        <div class="col-span-8">
+                                                                              <label for="app03" class="select-none pl-1 block text-md font-medium text-gray-300 upp">Why should you be accepted into the CosmicRP Community over another applicant?</label>
+                                                                              <div class="mt-1">
+                                                                                    <textarea draggable="false" name="app03" id="app03" rows="4" class="bg-gray-500 text-white rounded-md shadow-md px-4 py-2 sm:w-full w-auto focus:bg-gray-600"></textarea>
+                                                                              </div>
+                                                                              <p class="select-none pl-2 mt-2 text-sm text-gray-400"><span class="text-red-600 text-sm">* Required </span>3-5 sentences minimum.<p>
+                                                                        </div>
+
+                                                                  <div class="col-span-2"></div>
+                                                            </div>
+                                                            
+                                                            <div class="p-4"></div>
+                                                            
+                                                            <div class="grid grid-cols-12 gap-6">
+                                                                  <div class="col-span-2"></div>
+
+                                                                        <div class="col-span-8">
+                                                                              <label for="app04" class="select-none pl-1 block text-md font-medium text-gray-300 upp">Do you have any experience with roleplay?</label>
+                                                                              <div class="mt-1">
+                                                                                    <textarea draggable="false" name="app04" id="app04" rows="4" class="bg-gray-500 text-white rounded-md shadow-md px-4 py-2 sm:w-full w-auto focus:bg-gray-600"></textarea>
+                                                                              </div>
+                                                                              <p class="select-none pl-2 mt-2 text-sm text-gray-400"><span class="text-red-600 text-sm">* Required </span><p>
+                                                                        </div>
+
+                                                                  <div class="col-span-2"></div>
+                                                            </div>
+                                                            
+                                                            <div class="p-4"></div>
+                                                            
+                                                            <div class="grid grid-cols-12 gap-6">
+                                                                  <div class="col-span-2"></div>
+
+                                                                        <div class="col-span-8">
+                                                                              <label for="Department" class="select-none pl-1 block text-md font-medium text-gray-300 upp">Which department are you applying for?</label>
+                                                                              <div class="mt-1">
+                                                                                    <select draggable="false" name="Department" id="Department" class="bg-gray-500 text-white rounded-md shadow-md px-4 py-2 sm:w-full w-auto focus:bg-gray-600">
+                                                                                          <option value="" disabled selected hidden>Select a department</option>
+                                                                                          <option value="Law Enforcement Division">Department of Public Safety - Law Enforcement Division</option>
+                                                                                          <option value="Fire & EMS Division">Department of Public Safety - Fire & EMS Division</option>
+                                                                                          <option value="Communications Department">Communications Department</option>
+                                                                                          <option value="San Andreas Citizens">Citizens of San Andreas</option>
+                                                                                    </select>
+                                                                              </div>
+                                                                              <p class="select-none pl-2 mt-2 text-sm text-gray-400"><span class="text-red-600 text-sm">* Required </span><p>
+                                                                        </div>
+
+                                                                  <div class="col-span-2"></div>
+                                                            </div>
+                                                            
+                                                            <div class="p-4"></div>
+                                                            
+                                                            <div class="grid grid-cols-12 gap-6">
+                                                                  <div class="col-span-2"></div>
+
+                                                                        <div class="col-span-8">
+                                                                              <label for="app05" class="select-none pl-1 block text-md font-medium text-gray-300 upp">Why would you like to join this department?</label>
+                                                                              <div class="mt-1">
+                                                                                    <textarea draggable="false" name="app05" id="app05" rows="4" class="bg-gray-500 text-white rounded-md shadow-md px-4 py-2 sm:w-full w-auto focus:bg-gray-600"></textarea>
+                                                                              </div>
+                                                                              <p class="select-none pl-2 mt-2 text-sm text-gray-400"><span class="text-red-600 text-sm">* Required </span><p>
+                                                                        </div>
+
+                                                                  <div class="col-span-2"></div>
+                                                            </div>
+                                                            
+                                                            <div class="p-4"></div>
+                                                            
+                                                            <div class="grid grid-cols-12 gap-6">
+                                                                  <div class="col-span-2"></div>
+
+                                                                        <div class="col-span-8">
+                                                                              <label for="app06" class="select-none pl-1 block text-md font-medium text-gray-300 upp">Do you have any experience in this departments field of work?</label>
+                                                                              <div class="mt-1">
+                                                                                    <textarea draggable="false" name="app06" id="app06" rows="4" class="bg-gray-500 text-white rounded-md shadow-md px-4 py-2 sm:w-full w-auto focus:bg-gray-600"></textarea>
+                                                                              </div>
+                                                                              <p class="select-none pl-2 mt-2 text-sm text-gray-400"><span class="text-red-600 text-sm">* Required </span><p>
+                                                                        </div>
+
+                                                                  <div class="col-span-2"></div>
+                                                            </div>
+                                                            
+                                                            <div class="p-8"></div>
+                                                            
+                                                            <div class="grid grid-cols-12 gap-6">
+                                                                  <div class="col-span-2"></div>
+
+                                                                        <div class="col-span-8">
+                                                                              <button draggable="false" OnClick="ProcessApplication()" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                                                                                    <svg class="-ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                                                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                                                                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                                                                    </svg>
+                                                                                    Submit Application
+                                                                              </button>
+                                                                        </div>
+
+                                                                  <div class="col-span-2"></div>
+                                                            </div>
+                                                            
+                                                            <div class="p-4"></div>
+                        
+                                                      </div>
+                                                      
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <!-- ----------------------------------------- -->
+                        
+                        <div id="app.processing" class="hidden">
+                              <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                                    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                                          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+                                    
+                                          <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                                    
+                                          <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+                                                <div>
+                                                      <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-blue-100">
+                                                            <svg class="animate-ping w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                            </svg>
+                                                      </div>
+                                                      <div class="mt-3 text-center sm:mt-5">
+                                                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                                                  Processing application...
+                                                            </h3>
+                                                            <div class="mt-2">
+                                                                  <p class="text-sm text-gray-500">
+                                                                        Thank you for filling out the application. We are working on processing your application at this moment.<br>- DO NOT CLOSE THIS WINDOW -
+                                                                  </p>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                        <!-- ----------------------------------------- -->
+                        
+                        <div id="app.processed" class="hidden">
+                              <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                                    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                                          <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+                                    
+                                          <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                                    
+                                          <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6">
+                                                <div>
+                                                      <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-blue-100">
+                                                            <svg class="animate-ping w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                            </svg>
+                                                      </div>
+                                                      <div class="mt-3 text-center sm:mt-5">
+                                                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                                                  Application Processed
+                                                            </h3>
+                                                            <div class="mt-2">
+                                                                  <p class="text-sm text-gray-500">
+                                                                        - CONGRADULATIONS -<br>Your application has been successfully submitted. We are redirecting you now.
+                                                                  </p>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+                          
+                        <!-- ----------------------------------------- -->
+
+                  </div>
+
+
+
+                  <!-- SCRIPTS -->
+                  <script src="/socket.io/socket.io.js"></script>
+                  <script src="/assets/js/core/socket.connect.js"></script>
+                  <script src="/assets/js/core/jquery.slim.min.js"></script>
+                  <script src="/assets/js/core/popper.js"></script>
+                  <script src="/assets/js/core/sha3.min.js"></script>
+                  <script src="/assets/js/core/main.js"></script>
+
+                  
+                  <script src="/assets/js/auth/check-auth.js"></script>
+                  <script src="/assets/js/apps/app-check.js"></script>
+                  <script src="/assets/js/apps/app-submit.js"></script>
+
+            </body>
+
+      </html>

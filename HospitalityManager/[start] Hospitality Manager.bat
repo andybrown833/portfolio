@@ -1,0 +1,2 @@
+nodemon HospitalityManager.js
+pause

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+      <html lang="en">
+            <head>
+                  <link rel="stylesheet" href="reset.css" type="text/css">
+                  <link rel="stylesheet" href="index.css" type="text/css">
+                  <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+            </head>
+            <body>
+
+                  <div class="container" id="mainWindow2">
+                        <div class="main-header">
+                              <img src="./logo.png" class="main-img" alt="">
+                        </div>
+
+                        <!-- INSTRUCTIONS -->
+                        <div class="content" id="instructionsDisplay">
+                              <span class="text-title text-white">Department Fleet Manager</span>
+                              <br><br>
+                        </div>
+
+                        <!-- DEPT SELECT -->
+                        <div class="content scrollable" id="deptSelectionDisplay">
+                              
+                              <span class="text-description text-white">Select a department to continue</span>
+                              <hr>
+                              <div class="btn bg-blue text-white" id="saspSelect">San Andreas State Police</div>
+                              <!-- <div class="btn btn-disabled bg-opacity-50 bg-red text-white" id="lspdSelect">Los Santos Police Department</div> -->
+                              <!-- <div class="btn btn-disabled bg-red text-white" id="bcsoSelect">Blaine County Sheriff's Office</div> -->
+                              <!-- <hr> -->
+                              <!-- <div class="btn bg-blue text-white" id="utilitySelect">Utility Vehicles</div> -->
+                              <!-- <div class="btn btn-disabled bg-red text-white" id="utilitySelect">Utility Vehicles</div> -->
+                        </div>
+
+
+                        <!-- STATE POLICE FLEET LIST -->
+                        <div class="content scrollable hidden" id="saspSelection">
+
+                              <span class="text-description text-white">Select a vehicle to continue</span>
+                              <hr>
+                              <div class="btn bg-blue text-white" id="sasp14charg">2014 Dodge Charger</div>
+                              <div class="btn bg-blue text-white" id="sasp18charg">2018 Dodge Charger</div>
+                              <div class="btn bg-blue text-white" id="sasp16exp">2016 Ford Explorer</div>
+                              <!-- <div class="btn bg-blue text-white" id="sasp16tau">2016 Ford Taurus</div> -->
+                              <div class="btn bg-blue text-white" id="sasp11cvpi">2011 Ford CVPI</div>
+                              <!-- <div class="btn bg-blue text-white" id="sasp18tah">2018 Chevy Tahoe</div> -->
+                              <!-- <div class="btn bg-blue text-white" id="sasp18ram">2018 Dodge Ram</div> -->
+                              <!-- <div class="btn bg-blue text-white" id="sasp16cap">2016 Chevy Caprice</div> -->
+                              <hr>
+                              <div class="btn bg-gray text-white" id="deptReturn">Return to departments</div>
+
+                        </div>
+
+
+                        <!-- VEHICLE PRESET SPAWNER -->
+                        <div class="content scrollable hidden" id="vehPresetDisplay">
+
+                              <span class="text-description text-white">Select a preset package to continue</span>
+                              <hr>
+                              <div class="btn bg-blue text-white" id="packagePatrol">Patrol Package</div>
+                              <div class="btn bg-blue text-white" id="packageSlicktop">SlickTop Package</div>
+                              <div class="btn bg-blue text-white" id="packageUnmarked">Unmarked Package</div>
+                              <hr>
+                              <div class="btn bg-gray text-white" id="saspVehReturn">Return to the vehicle list</div>
+
+                        </div>
+
+                        
+                        <!-- CLOSE -->
+                        <div class="content" id="closeDisplay" style="margin-top:15px;">
+                              <div class="btn bg-orange text-white" id="closeBtn2">Close</div>
+                        </div>
+
+
+                  </div>
+
+
+                  </div>
+
+                  <!-- SCRIPTS -->
+                  <script src="./index.js" type="text/javascript"></script>
+
+            </body>
+      </html>
